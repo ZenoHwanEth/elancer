@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<title id="username2"></title>
+
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+  <link rel="stylesheet" type="text/css" href="freelancerProfile.css">
+</head>
+
+<body>
+
+  <div class="header">
+      <!--title side of bar-->
+      <div class="header-button-left">
+          <button class="top-button" onclick="homeClick()">Home</button>
+          <button class="top-button" onclick="searchClick()">Search Service</button>
+      </div>
+
+      <div class = "topnav-right">
+    		<button class="main_button" id="loginBtn" type="submit" onclick="customer()">Customer</button>
+        <button class="main_button" id="RegisterBtn" type="submit" onclick="freelancer()">Freelancer</button>
+        <button class="main_button" id="userLoggedIn" onclick="goProfile()" style="display:none;"></p>
+      </div>
+  </div>
+
+  <!--login and register area===================================================-->
+
+    <div id="Customer" class="loginRegisterBox" style="display:none">
+      <!--customer login-->
+      <div id="customerLogin" class="Login">
+        Customer Login<br>
+        <input id="exCusEmail" type="email" name="email" value="" placeholder="Email"><br>
+        <input id="exCusPassword" type="password" name="password" value="" placeholder="Password"><br>
+        <button class="main_button" type="submit" name="button" onclick="cusLogin()">Login</button>
+      </div>
+
+      <a id="signup" href="#customerRegister" style="display:block" onclick="RegCust()">Register as a customer.</a>
+    </div>
+
+
+    <div id="Freelancer" class="loginRegisterBox" style="display:none">
+      <!--freelancer login-->
+       <div id="freelancerLogin" class="Login">
+        Freelancer Login<br>
+        <input id="fEmail" type="email" name="email" value="" placeholder="Email"><br>
+        <input id="fpassword" type="password" name="password" value="" placeholder="Password"><br>
+        <button class="main_button" type="submit" name="button" onclick="freeLogin()">Login</button>
+      </div>
+
+      <a id="signup2" href="#FreelancerRegister" style="display:block" onclick="RegFree()">Register as a freelancer.</a>
+    </div>
+
+<!--============================================================================-->
+  <div class="avatar">
+    <img class="avatarImg" src="avatar.svg" alt="Avatar">
+    <p id="username">Freelancer</p>
+    <div class="rating">
+      <img id="star1" src="resourse\image\star_fill.png" alt="star_fill" width="40px" height="40px">
+      <img id="star2" src="resourse\image\star_fill.png" alt="star_fill" width="40px" height="40px">
+      <img id="star3" src="resourse\image\star_fill.png" alt="star_fill" width="40px" height="40px">
+      <img id="star4" src="resourse\image\star_fill.png" alt="star_fill" width="40px" height="40px">
+      <img id="star5" src="resourse\image\star_fill.png" alt="star_fill" width="40px" height="40px">
+      <p id="ratingText">Rating: </p>
+    </div>
+  </div>
+
+<div style="display:block;margin-top: 50px;position:static">
+  <ul id="nav-bar">
+    <li><a class="active" onclick="displayServiceClick()">Service List</a></li>
+    <li><a onclick="displayReviewClick()">Review</a></li>
+    <li><a onclick="displayAboutClick()">About</a></li>
+  </ul>
+  <div id="serviceList" style="background-color: background-color: #4664C6;"></div>
+  <div id="reviewList" style="background-color: background-color: #4664C6; display:none;"></div>
+  <div id="about" style="background-color: background-color: #4664C6; display: none">
+    <div class="container" id="description">
+
+    </div>
+    <div class="container" id="contact">
+
+    </div>
+  </div>
+
+</div>
+
+
+</body>
+
+
+
+<!--script====================================================================>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+  https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-functions.js"></script>
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAEtfmRoVDvnc_hvjsegtOXPzTiWSyfe2k",
+      authDomain: "cmt322-d01d6.firebaseapp.com",
+      databaseURL: "https://cmt322-d01d6.firebaseio.com",
+      projectId: "cmt322-d01d6",
+      storageBucket: "cmt322-d01d6.appspot.com",
+      messagingSenderId: "793974782556",
+      appId: "1:793974782556:web:0e3869bb34fa174a900499",
+      measurementId: "G-Y863S63Q9M"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+
+  <script src="index.js"></script>
+  <script src="freelancerProfile.js"></script>
+
+</html>

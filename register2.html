@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<title>Registeration - freelancer</title>
+
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+  <link rel="stylesheet" type="text/css" href="register.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <h2>Register as Freelancer</h2><br>
+    <p>Fill in the form to register your account.</p>
+  <!--customer register-->
+    <div id="freelancerRegister" class="Register">
+        <input id="fEmail" type="email" name="email" placeholder="Email" required><br>
+        <input id="fName" type="text" name="username" placeholder="Username"required><br>
+        <input id="fPassword" type="password" name="password" placeholder="Password" required><br>
+        <input id="fcontact" type="text" name="contact" placeholder="Contact" required><br>
+        <select id="state" required>
+            <option value="0">Select State</option>
+            <option value="1">Negeri Sembilan</option>
+            <option value="2">Pahang</option>
+            <option value="3">Penang</option>
+            <option value="4">Perlis</option>
+            <option value="5">Kelatan</option>
+            <option value="6">Johor</option>
+            <option value="7">Selangor</option>
+            <option value="8">Sarawak</option>
+            <option value="9">Sabah</option>
+            <option value="10">Perak</option>
+            <option value="11">Kedah</option>
+            <option value="12">Terengganu</option>
+            <option value="13">Malacca</option>
+        </select>
+        <textarea rows="4" cols="50" id="faddress" type="textarea" placeholder="Address"></textarea> <br>
+
+        <p>Enter your working hour: </p>
+        <p>Start</p>
+        <input type="time" id="startTime" min="06:00" max="22:00" value="08:00" style="width:50%" required>
+        <p>End</p>
+        <input type="time" id="endTime" min="06:00" max="22:00" value="21:00" style="width:50%" required>
+
+        <textarea rows="4" cols="50" id="description" type="textarea" placeholder="Describe yourself" required></textarea> <br>
+
+        <button class="main_button" type="submit" name="button" onclick="newFreelancer()">Register</button>
+        <button class="cancel_button" type="submit" name="button" onclick="cancelReg()">Cancel</button>
+    </div>
+  </div>
+</body>
+<!--script====================================================================>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+  https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-database.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAEtfmRoVDvnc_hvjsegtOXPzTiWSyfe2k",
+      authDomain: "cmt322-d01d6.firebaseapp.com",
+      databaseURL: "https://cmt322-d01d6.firebaseio.com",
+      projectId: "cmt322-d01d6",
+      storageBucket: "cmt322-d01d6.appspot.com",
+      messagingSenderId: "793974782556",
+      appId: "1:793974782556:web:0e3869bb34fa174a900499",
+      measurementId: "G-Y863S63Q9M"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+  <script src="index.js"></script>
+
+</html>

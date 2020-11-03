@@ -1,0 +1,72 @@
+.job_reg_cont{
+    margin: 2% 7%;
+    background-color: white;
+    width: auto !important;
+    height: 85%;
+    margin-left: 25%;
+    margin-right: 25%;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    padding: 0.5% 0.5%;
+}
+
+.job_reg_cont_content{
+    display:flex;
+    flex-direction: row;
+    margin: 0% 20%;
+    justify-content: space-between;
+    margin-top: 3%;
+}
+
+.job_reg_cont_text_area{
+    width: 70%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+
+.job_reg_cont_input{
+    width: 70%;
+    box-sizing: border-box;
+    border:2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    padding: 12px;
+}
+
+.job_reg_cont_select{
+    border:2px solid #ccc;
+    border-radius: 4px;
+    color: #737373;
+}
+
+.job_reg_cont_select option{
+    color: #737373;
+}
+
+.job_reg_cont_button{
+    width: 70%;
+    box-sizing: border-box;
+    border:2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    padding: 12px;
+}
+
+
+.job_reg_cont_footer{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(70, 100, 198);
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<title>Freelancer Profile</title>
+
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+  <link rel="stylesheet" type="text/css" href="freelancerPage.css">
+  <link rel="stylesheet" type="text/css" href="topnav.css">
+
+</head>
+
+<body>
+  <div class="header search_header">
+      <!--title side of bar-->
+      <div class="header-button-left">
+          <button class="top-button" onclick="homeClick()">Home</button>
+          <button class="top-button" onclick="searchClick()">Search Service</button>
+      </div>
+
+      <div class="header-button-right">
+        <button class="top-button" onclick="logout()">Logout</button>
+      </div>
+  </div>
+<!-- left side -> nagivation -->
+  <div class="sidenav">
+    <div class="avatar">
+      <img class="avatarImg" src="avatar.svg" alt="Avatar">
+      <p id="username">User</p>
+    </div>
+    <a href="#" id="profilePage" onclick="profClick()"><img class="icon" src="profile.png"><p class="iconLink">Profile</p></a>
+    <button class="dropdown-btn"><img class="icon" src="job.png"><p class="iconLink">Job</p></button>
+    <div class="dropdown-container">
+      <a href="#" id="bookPage" style="background-color: #dddddf" onclick="bookClick()"><img class="icon" src="hourglass.png"><p class="iconLink">Pending Job    </p></a>
+      <a href="#" id="schedulePage" style="background-color: #dddddf" onclick="scheduleClick()"><img class="icon" src="clock.png"><p class="iconLink">Schedule</p></a>
+      <a href="#" id="histPage" style="background-color: #dddddf" onclick="histClick()"><img class="icon" src="tick.png"><p class="iconLink">History</p></a>
+    </div>
+    <a href="#" id="reviewPage"  onclick="reviewClick()"><img class="icon" src="rating.png"><p class="iconLink">Review</p></a>
+    <a href="#" id="servicePage" onclick="serviceClick()"><img class="icon" src="service.png"><p class="iconLink">My Service</p></a>
+    <a onclick="RegisterJobclick()"><img class="icon" src="edit.png"><p class="iconLink">Register job</p></a>
+  </div>
+  <!-- right side -->
+
+ <h1 class="heading" id="main_title">My Profile</h1>
+
+    <div id="profile">
+      <div class="container">
+        <h2 style="display: inline;">Username :</h2>
+        <h2 style="display: inline;" id="username2"></h2>
+        <br>
+        <h2 style="display: inline;">Email :</h2>
+        <h2 style="display: inline;" id="email"></h2>
+        <br>
+        <h2 style="display: inline;">Address :</h2>
+        <h2 style="display: inline;" id="address"></h2>
+        <input class="editfield" type="text" placeholder="New Address..." style="display:none">
+        <br>
+        <h2 style="display: inline;">Contact :</h2>
+        <h2 style="display: inline;" id="contact"></h2>
+        <input class="editfield" type="text" placeholder="New Contact..." style="display:none">
+        <br><br>
+        <button id="editbtn" type="submit" class="main_button" enabled onclick="editClick()">Edit</button>
+        <button id="savebtn" type="submit" class="main_button" disabled onclick="saveClick()">Save</button>
+      </div>
+
+      <div class="container">
+        <div style="float:left; margin-left:auto; margin-right:auto; width:50%">
+          <p id="balance">balance : 0.00</p>
+        </div>
+
+        <div style="float:right; margin-left:auto; margin-right:auto; width:50%">
+          <!--<a href="addPayment.html" style="width:100%" onclick="openRequestForm()">
+            <img src="wallet.png" alt="Wallet" style="display: block; margin-left: auto; margin-right: auto; width: 30px;">
+            <p style="text-align: center; font-size:15px">Withdraw Money</p>
+          </a>-->
+        </div>
+      </div>
+    </div>
+
+    <div class="container" id="edit_profile" style="display: none">
+      <form>
+        <h2>Username :</h2>
+        <input class="form-control" type="text" id="fusername2">
+        <h2>Email :</h2>
+        <input class="form-control" type="text" id="femail">
+        <h2>Address :</h2>
+        <input class="form-control" type="text" id="faddress">
+        <h2>Contact :</h2>
+        <input class="form-control" type="text" id="fcontact">
+        <br>
+        <input type="submit" value="Save Changes" onclick="saveClick()">
+        <input type="button" value="Cancel" class="cancelBtn" onclick="show('profile')">
+      </form>
+    </div>
+
+    <div id="job" style="display: none"></div>
+
+    <div id="time_available" style="display: none"></div>
+
+    <div id="schedule" style="display: none"></div>
+
+    <div id="hist" style="display: none"></div>
+
+    <div id="review" style="display: none"></div>
+
+    <div id="my_service" style="display: none"></div>
+
+</body>
+
+<!--script====================================================================>
+
+  <!--The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+  https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-database.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAEtfmRoVDvnc_hvjsegtOXPzTiWSyfe2k",
+      authDomain: "cmt322-d01d6.firebaseapp.com",
+      databaseURL: "https://cmt322-d01d6.firebaseio.com",
+      projectId: "cmt322-d01d6",
+      storageBucket: "cmt322-d01d6.appspot.com",
+      messagingSenderId: "793974782556",
+      appId: "1:793974782556:web:0e3869bb34fa174a900499",
+      measurementId: "G-Y863S63Q9M"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+
+  <script src="index.js"></script>
+
+
+</html>

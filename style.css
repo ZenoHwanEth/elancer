@@ -1,0 +1,443 @@
+/*set the fixed background image
+	the body has height and width of 100%
+	with no mergin*/
+body, html {
+  margin: 0;
+  background:url(main_background.jpg) top right no-repeat;
+  background-attachment:fixed;
+
+
+	/* Full height*/
+	height: 100%;
+	width:100%;
+	/* Center and scale the image nicely */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	transition: 1s;
+  font-family: 'Arial';
+  /*Container min width and height*/
+  min-width:800px;
+  min-height: 700px;
+}
+
+.explain{
+  font-size: 2vw;
+}
+
+h1.explain{
+  font-size: 2.5vw;
+}
+
+header{
+  min-height: 50px;
+  height: 6vh;
+  background-color: rgba(70, 100, 198);
+}
+table{
+  width: 1180px;
+  height: 150px;
+  background-color: #bfffe0;
+  border: 1px solid black;
+  table-layout : fixed;
+  float: center;
+  cursor: text;
+
+  margin-left:5px;
+  margin-bottom:10px;
+  font-size:14px;
+}
+
+tr{
+  vertical-align:top;
+}
+
+td, th{
+  border: 1px solid black;
+}
+
+.down{
+  width: 100%;
+  height: 10%;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+}
+
+#downBtn{
+  float: bottom;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  text-decoration: none;
+  bottom: 10px;
+
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+/*==================================================================*/
+/* Change the color of links on hover
+set the opacity of the navigation bar */
+/*button for user to login/logout*/
+.main_button{
+  opacity: 0.9;
+  display: inline-block;
+  color: #fff;
+  float: center;
+  width: 120px;
+  height: 40px;
+
+  margin: 10px;
+
+  background: #4664C6;
+  border-radius: 10px;
+
+  outline: none;
+  border: none;
+
+  cursor: pointer;
+  text-align: center;
+  font-size:18px;
+  transition: all 0.2s linear;
+}
+
+.main_button:hover{
+  width: 140px;
+  height: 50px;
+  font-size: 20px;
+}
+
+.button2{
+  opacity: 0.9;
+  display: inline-block;
+  color: #fff;
+  float: center;
+  width: 120px;
+  height: 40px;
+
+  margin: 10px;
+
+  background: #4664C6;
+  border-radius: 10px;
+
+  outline: none;
+  border: none;
+
+  cursor: pointer;
+  text-align: center;
+  font-size:18px;
+  transition: all 0.2s linear;
+}
+
+#search_button{
+  height:50px;
+}
+
+/*================================================================*/
+.topnav{
+  padding-top: 30px;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+	background-color: #4CAF50;
+	opacity: 0.5;
+	color: white;
+}
+
+/*put the navigation link to top right*/
+.topnav-right {
+	float: right;
+	padding-right:25px;
+}
+
+/*==================================================================*/
+.searchArea{
+  padding-top: 13%;
+  margin: 20px;
+  text-align: center;
+}
+
+#search{
+  border-radius: 20px;
+  font-size: 30px;
+  width: 60%;
+  height: 50px;
+}
+/*===================================================================*/
+
+.loginRegisterBox{
+  width: 30%;
+  max-width: 300px;
+  height: auto;
+  float: right;
+  position: absolute;
+  z-index: 1;
+  top : 70px;
+  right:10px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 30px;
+  margin: 30px;
+  background-color: #D7E2F4;
+  box-shadow: 10px 10px 8px 0px rgba(0,0,0,0.25);
+}
+
+.Login input{
+  padding: 5px;
+  border-radius: 5px;
+  height: 20%;
+  width: 80%;
+  margin: 10px;
+  font-size: 15px;
+}
+
+/*==================================================================*/
+.avatar{
+  width:100%;
+  height:40%;
+  text-align: center;
+  display: block;
+}
+
+.avatarImg{
+  margin: 8%;
+  margin-bottom: auto;
+  border-radius: 50%;
+  max-width: 70%;
+  max-height: 70%;
+}
+
+#username{
+  width: 100%;
+  font-size: 20px;
+  font-family: sans-serif;
+  text-align: center;
+  position: relative;
+}
+/*==================================================================*/
+/* Create three equal columns that floats next to each other */
+.columnLeft {
+  float: left;
+  width: 20%;
+}
+
+.columnRight {
+  float: right;
+  width: 70%;
+}
+
+/*Freelancer Page*/
+
+.freecontainer{
+  z-index: 0;
+  height: auto;
+  width: 100%
+  top: 0;
+  right: 0;
+  background-color: #e9effb;
+  overflow-x: hidden;
+  padding: 10px;
+  margin: 2%;
+  margin-left: 16%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#edit_profile {
+  display: none;
+}
+
+#edit_button{
+  height: 20px;
+  width: 20px;
+  float: right;
+}
+
+input[type=submit]{
+  height: 30px;
+  width: 120px;
+  background-color: rgb(41, 145, 243);
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 10px;
+}
+
+input[type=submit]:hover{
+  color: rgb(41, 145, 243);
+  background-color:black;
+}
+
+.cancelBtn{
+  height: 30px;
+  width: 70px;
+  color: white;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  background-color: rgb(247, 62, 62);
+  transition: 0.3s;
+
+}
+
+.cancelBtn:hover{
+  color:rgb(247, 62, 62);
+  background-color: black;
+
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 800px) {
+  .sidenav{
+    height: 70px;
+    width: 70px;
+  }
+
+  .sidenav a{
+    padding:8px 32px 8px 22px !important;
+  }
+  .content{
+    margin-left: 70px !important;
+  }
+
+  .iconLink{
+    display: none !important;
+  }
+
+  #username{
+    display: none;
+  }
+
+}
+
+.timeslot{
+    width : 700px;
+    height: 100px;
+  }
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
+/*@media screen and (max-width: 550px) {
+  .columnLeft {
+    width: 100%;
+  }
+
+  .sidenav{
+    width:100%;
+  }
+
+  .columnRight .container{
+    width: 0;
+  }
+
+  .sidenav a{
+    width:100%;
+  }
+
+  .iconLink{
+    display: inline-block !important;
+    font-size: 25px;
+  }
+}*/
+
+/*===================================================================*/
+.sidenav{
+  float: left;
+  height: 100% !important;
+  max-width: 300px;
+  position: relative;
+  top: 0;
+  left: 0;
+  background-color: #e9effb;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding-top: 30px;
+  z-index: 2;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  vertical-align: middle;
+  padding:8px 32px 8px 32px;
+  text-decoration: none;
+  font-size: 1.2vw;
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1 !important;
+  background-color: #8c95a1 !important;
+}
+
+.icon{
+  display: inline;
+  vertical-align: middle;
+  margin-right: 10px;
+  height: 25px;
+  width: 25px;
+}
+
+.iconLink{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/*===================================================================*/
+/*=========================== hwan ====*/
+.container{
+  z-index: 0;
+  height: auto;
+  width: 100%
+  top: 0;
+  right: 0;
+  background-color: #e9effb;
+  overflow-x: hidden;
+  padding: 10px;
+  margin: 30px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.text{
+  font-family: sans-serif;
+  color: #4664C6;
+}
+
+.header-button-right{
+  margin-left: 8%;
+  height: 100%;
+  float: left;
+  display: flex;
+  flex-direction: row;
+}
+.top-button{
+  background-color:  rgba(70, 100, 198);
+  padding-top: 7px;
+  font-weight: bold;
+  font-size: 15px;
+  color:white;
+  outline: none;
+  border: none;
+  height: 100%;
+  margin-right: 10px;
+}
+.top-button:hover{
+  color: rgb(196, 186, 186);
+}
+
+/*=========================== hwan ====*/

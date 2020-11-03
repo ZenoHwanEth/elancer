@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<title>User Profile</title>
+
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+  <link rel="stylesheet" type="text/css" href="customerPage.css">
+</head>
+
+<body>
+
+  <div class="header search_header">
+      <!--title side of bar-->
+      <div class="header-button-left">
+          <button class="top-button" onclick="homeClick()">Home</button>
+          <button class="top-button" onclick="searchClick()">Search Service</button>
+      </div>
+
+      <div class="header-button-right">
+        <button class="top-button" onclick="logout()">Logout</button>
+      </div>
+  </div>
+<!-- left side -> nagivation -->
+    <div class="sidenav">
+      <div class="avatar">
+        <img class="avatarImg" src="avatar.svg" alt="Avatar">
+        <p id="username">Customer</p>
+      </div>
+
+      <a href="#" style="background: #95a0ad;" id="profile" onclick="profileClick()"><img class="icon" src="profile.png"><p class="iconLink">Profile</p></a>
+      <a href="#" id="booking" onclick="bookingClick()"><img class="icon" src="calendar.png"><p class="iconLink">Booking</p></a>
+      <a href="#" id="favorite" onclick="favoriteClick()"><img class="icon" src="ongoing.png"><p class="iconLink">Ongoing</p></a>
+      <a href="#" id="history" onclick="historyClick()"><img class="icon" src="history.png"><p class="iconLink">History</p></a>
+    </div>
+
+  <!-- right side -->
+  <div class="content">
+    <h1 id="title" class="heading">My Profile</h1><br>
+
+    <div id="profilePage">
+        <div class="container">
+          <h3>Username: </h3> <h3 id="username2"></h3>
+          <h3>Email: </h3> <h3 id="email"></h3>
+          <h3>Address: </h3> <h3 id="address"></h3>
+          <input class="editing" type="text" placeholder="New Address..." style="display:none">
+          <h3>Contact: </h3> <h3 id="contact"></h3>
+          <input class="editing" type="text" placeholder="New Contact..." style="display:none">
+
+          <button id="edit_btn" type="submit" class="main_button" enabled onclick="onEditClick()">Edit</button>
+          <button id="save_btn" type="submit" class="main_button" disabled onclick="onSaveClick()">Save</button>
+        </div>
+
+        <!-- show customer payment method -->
+        <h2 class="heading">My Wallet<h2>
+
+        <!-- end showing customer payment method -->
+        <!-- link redirect customer to add payment method -->
+        <div class="container">
+          <div style="float:left; margin-left:auto; margin-right:auto; width:50%">
+            <p id="balance">balance : 0.00</p>
+          </div>
+
+          <div style="float:right; margin-left:auto; margin-right:auto; width:50%">
+            <a href="addPayment.html" style="width:100%" onclick="openRequestForm()">
+              <img src="wallet.png" alt="Wallet" style="display: block; margin-left: auto; margin-right: auto; width: 30px;">
+              <p style="text-align: center; font-size:15px">Top Up My Wallet</p>
+            </a>
+          </div>
+        </div>
+        <!-- end add customer payment method -->
+    </div>
+
+    <div id="bookingPage_main" style="display:none;">
+      <div id="bookingPage">
+
+      </div>
+
+      <div class="container">
+          <a href="search.html" style="width:100%">
+            <img src="addIcon.png" alt="Make Request" style="display: block; margin-left: auto; margin-right: auto; width: 30px;">
+            <p style="text-align: center">Add New Job Request</p>
+          </a>
+      </div>
+    </div>
+
+    <div id="historyPage" style="display:none;">
+
+    </div>
+
+    <div id="favoritePage" style="display:none;">
+
+    </div>
+  </div>
+</body>
+
+
+
+<!--script====================================================================>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+  https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-database.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAEtfmRoVDvnc_hvjsegtOXPzTiWSyfe2k",
+      authDomain: "cmt322-d01d6.firebaseapp.com",
+      databaseURL: "https://cmt322-d01d6.firebaseio.com",
+      projectId: "cmt322-d01d6",
+      storageBucket: "cmt322-d01d6.appspot.com",
+      messagingSenderId: "793974782556",
+      appId: "1:793974782556:web:0e3869bb34fa174a900499",
+      measurementId: "G-Y863S63Q9M"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+
+  <script src="index.js"></script>
+
+</html>

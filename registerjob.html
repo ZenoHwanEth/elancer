@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Register - job </title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="resourse/css/jobregister.css">
+    </head>
+    <header>
+        <div class="header-button-right">
+            <img src="resourse/layout/elancerlogo.png" style="height: auto; width: 8%">
+            <button class="top-button" onclick="homeClick()">Home</button>
+            <button class="top-button" onclick="searchClick()">Search Service</button>
+        </div>       
+    </header>
+    <body>
+        <div class="job_reg_cont">
+            <h1 class="text">Register Job</h1>  
+            <div class="job_reg_cont_content">
+                <p class="text">Job Title</p>
+                <input id="rj_title" class ="job_reg_cont_input" style="width:70%;" placeholder="Example: Cleaner...">
+            </div>
+            <div class="job_reg_cont_content">
+                <p class="text">Location</p>
+                    <select id="rj_state" class="job_reg_cont_select" style="width:70%;">
+                        <option value="0">Select State</option>
+                        <option value="1">Negeri Sembilan</option>
+                        <option value="2">Pahang</option>
+                        <option value="3">Penang</option>
+                        <option value="4">Perlis</option>
+                        <option value="5">Kelatan</option>
+                        <option value="6">Johor</option>
+                        <option value="7">Selangor</option>
+                        <option value="8">Sarawak</option>
+                        <option value="9">Sabah</option>
+                        <option value="10">Perak</option>
+                        <option value="11">Kedah</option>
+                        <option value="12">Terengganu</option>
+                        <option value="13">Malacca</option>
+                    </select>
+            </div>
+            <div class="job_reg_cont_content">
+                <p class="text">Categories</p>
+                <select id="rj_categories" class="job_reg_cont_select"  style="width:70%;">
+                    <option value="0">Select Categories</option>
+                    <option value="1">Additions & Remodels</option>
+                    <option value="2">Appliances</option>
+                    <option value="3">Architects & Engineers</option>
+                    <option value="4">Carpentry</option>
+                    <option value="5">Carpet</option>
+                    <option value="6">Cleaning & Maid Service</option>
+                    <option value="7">Concrete, Brick & Stone</option>
+                    <option value="8">Decks & Porches</option>
+                    <option value="9">Driveways, Patios & Walks</option>
+                    <option value="10">Drywall & Insulation</option>
+                    <option value="11">Fences</option>
+                    <option value="12">Garages, Doors, Openers</option>
+                    <option value="13">Landscape</option>
+                    <option value="14">Lawncare & Sprinklers</option>
+                    <option value="15">Remodels</option>
+                    <option value="16">Siding</option>
+                    <option value="17">Swimming Pools & Spas</option>
+                    <option value="18">Tile & Stone</option>
+                    <option value="19">Walls & Ceilings</option>
+                </select>   
+            </div>
+            <div class="job_reg_cont_content">
+                <p class="text" >Price per hour </p>
+                <input id="rj_price" class ="job_reg_cont_input" style="width:70%;" placeholder="Example: 5,7,9...">
+            </div>
+            <div class="job_reg_cont_content">
+                <p class="text">Description</p>
+                <textarea id="rj_description" class ="job_reg_cont_text_area" placeholder="Type here..."></textarea>
+            </div>
+            <button onclick="rj_RegisterJobclick()" class="main_button" style="margin-left:38%; margin-top:5%; width:25%; height:10%;">Submit</button>
+        </div>
+        <div class="job_reg_cont_footer"><p style="color:antiquewhite; font-family: sans-serif; ">© 2019 eLancer - All Rights Reserved </p></div>
+    </body>
+
+    <!--script====================================================================>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+  https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-database.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAEtfmRoVDvnc_hvjsegtOXPzTiWSyfe2k",
+      authDomain: "cmt322-d01d6.firebaseapp.com",
+      databaseURL: "https://cmt322-d01d6.firebaseio.com",
+      projectId: "cmt322-d01d6",
+      storageBucket: "cmt322-d01d6.appspot.com",
+      messagingSenderId: "793974782556",
+      appId: "1:793974782556:web:0e3869bb34fa174a900499",
+      measurementId: "G-Y863S63Q9M"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+    <script src="index.js"></script>
+    <script src ="registerjob.js"></script>
+</html>

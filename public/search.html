@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Search - E-lancer</title>
+        <meta charset="UTF-8">
+        <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="resourse/custom_select/custom_select.css">
+        <link rel="stylesheet" type="text/css" href="resourse/css/search.css">
+    </head>
+    <header class="search_header">
+        <!--title side of bar-->
+        <div class="header-button-right">
+            <button class="top-button" onclick="_homeClick()">Home</button>
+            <button class="top-button" onclick="searchClick()">Search Service</button>
+        </div>   
+        <div class ="topnav">
+            <div class = "topnav-right">
+                <p>Log In As |</p>
+                <button class="main_button_search" id="loginBtn" type="submit" onclick="customer()">Customer</button>
+                <button class="main_button_search" id="RegisterBtn" type="submit" onclick="freelancer()">Freelancer</button>
+                <button class="main_button_search" id="userLoggedIn" onclick="goProfile()" style="display:none;"></p>
+            </div>
+        </div>
+        <div id="Customer" class="loginRegisterBox" style="display:none">
+                <!--customer login-->
+                <div id="customerLogin" class="Login">
+                  Customer Login<br>
+                  <input id="exCusEmail" type="email" name="email" value="" placeholder="Email"><br>
+                  <input id="exCusPassword" type="password" name="password" value="" placeholder="Password"><br>
+                  <button class="main_button" type="submit" name="button" onclick="cusLogin()">Login</button>
+                </div>
+            
+                <a id="signup" href="#customerRegister" style="display:block" onclick="RegCust()">Register as a customer.</a>
+              </div>
+            
+            
+              <div id="Freelancer" class="loginRegisterBox" style="display:none">
+                <!--freelancer login-->
+                 <div id="freelancerLogin" class="Login">
+                  Freelancer Login<br>
+                  <input id="fEmail" type="email" name="email" value="" placeholder="Email"><br>
+                  <input id="fpassword" type="password" name="password" value="" placeholder="Password"><br>
+                  <button class="main_button" type="submit" name="button" onclick="freeLogin()">Login</button>
+                </div>
+            
+                <a id="signup2" href="#FreelancerRegister" style="display:block" onclick="RegFree()">Register as a freelancer.</a>
+              </div>         
+    </header>
+    <body>
+        <div class="inner_header"><p style="margin-left: 8.5%;">Services in <b>eLancer</b></p> <p style="margin-left: 63%; color: gray;" id="number_service"></p> </div>
+        <div id="showSearch" style="background-color: white; width:20%; margin-left:8%"></div>
+        <div class="search_section">
+            <!-- put search function-->
+            <div class="search_criteria">
+                    <!---search section-->
+                    <p class="headline">Search Criteria</p></br>
+                    <input class="search" type="search" placeholder="Search" id="title">
+                   <div class="custom-select" style="width:200px;" >
+                        <select id="state">
+                            <option value="0">Select State</option>
+                            <option value="1">Negeri Sembilan</option>
+                            <option value="2">Pahang</option>
+                            <option value="3">Penang</option>
+                            <option value="4">Perlis</option>
+                            <option value="5">Kelatan</option>
+                            <option value="6">Johor</option>
+                            <option value="7">Selangor</option>
+                            <option value="8">Sarawak</option>
+                            <option value="9">Sabah</option>
+                            <option value="10">Perak</option>
+                            <option value="11">Kedah</option>
+                            <option value="12">Terengganu</option>
+                            <option value="13">Malacca</option>
+                        </select>
+                    </div>
+                    <div class="custom-select" style="width:200px;">
+                        <select  id="categories">
+                            <option value="0">Select Categories</option>
+                            <option value="1">Additions & Remodels</option>
+                            <option value="2">Appliances</option>
+                            <option value="3">Architects & Engineers</option>
+                            <option value="4">Carpentry</option>
+                            <option value="5">Carpet</option>
+                            <option value="6">Cleaning & Maid Service</option>
+                            <option value="7">Concrete, Brick & Stone</option>
+                            <option value="8">Decks & Porches</option>
+                            <option value="9">Driveways, Patios & Walks</option>
+                            <option value="10">Drywall & Insulation</option>
+                            <option value="11">Fences</option>
+                            <option value="12">Garages, Doors, Openers</option>
+                            <option value="13">Landscape</option>
+                            <option value="14">Lawncare & Sprinklers</option>
+                            <option value="15">Remodels</option>
+                            <option value="16">Siding</option>
+                            <option value="17">Swimming Pools & Spas</option>
+                            <option value="18">Tile & Stone</option>
+                            <option value="19">Walls & Ceilings</option>
+                        </select>
+                    </div>
+                    <button class="main_button" onclick="selectChoiceclick()">Select</button>
+             </div>
+            <div class="search_container" id="search_container">
+                <!-- put search content-->
+            </div>
+        </div>
+        <div class="bottom_container"><div class="pages" id="get_page"></div><p class="random_design" style="color: gray;" id="number_service1"></p></div>
+        <div class="footer"><p style="color:antiquewhite; font-family: sans-serif; ">© 2019 eLancer - All Rights Reserved </p></div>
+
+                    <!--script====================================================================>
+
+            <!-- The core Firebase JS SDK is always required and must be listed first -->
+            <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+
+            <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+            <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-analytics.js"></script>
+          
+            <!-- Add Firebase products that you want to use -->
+            <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-database.js"></script>
+          
+            <script>
+              // Your web app's Firebase configuration
+              var firebaseConfig = {
+                apiKey: "AIzaSyAEtfmRoVDvnc_hvjsegtOXPzTiWSyfe2k",
+                authDomain: "cmt322-d01d6.firebaseapp.com",
+                databaseURL: "https://cmt322-d01d6.firebaseio.com",
+                projectId: "cmt322-d01d6",
+                storageBucket: "cmt322-d01d6.appspot.com",
+                messagingSenderId: "793974782556",
+                appId: "1:793974782556:web:0e3869bb34fa174a900499",
+                measurementId: "G-Y863S63Q9M"
+              };
+              // Initialize Firebase
+              firebase.initializeApp(firebaseConfig);
+              firebase.analytics();
+            </script>
+          
+            <script src="index.js"></script>
+            <script src="search.js"></script>
+            <script src ="resourse/custom_select/custom_select.js"></script>
+            
+    </body>
+</html>
+

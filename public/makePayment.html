@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<title>Registeration - customer</title>
+
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+  <link rel="stylesheet" type="text/css" href="register.css">
+</head>
+
+<body>
+
+  <!--customer register-->
+  <div class="container">
+    <h2>Confirm Payment</h2>
+    <p style="display:block">Booking Time: <span style="float:right;" id="bookingTime"></span></p>
+    <p style="display:block">Service Time: <span style="float:right" id="serviceTime"></span></p>
+    <p style="display:block">Freelancer: <span style="float:right" id="freelancer"></span></p>
+    <p style="display:block">Customer: <span style="float:right" id="customer"></span></p>
+    <p style="display:block">Service: <span style="float:right" id="description"></span></p>
+    <br><br><br>
+    <h3 style="display:block">Total payment: <span style="float:right" id="fees">0.00</span></h3>
+    <p style="display:block">Current balance: <span style="float:right" id="balance">0.00</span></p>
+
+    <button class="main_button" type="submit" onclick="makePayment()">Pay</button>
+    <button class="cancel_button" type="submit" onclick="goProfile()">Cancel</button>
+  </div>
+
+<!--script====================================================================>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+  https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-database.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAEtfmRoVDvnc_hvjsegtOXPzTiWSyfe2k",
+      authDomain: "cmt322-d01d6.firebaseapp.com",
+      databaseURL: "https://cmt322-d01d6.firebaseio.com",
+      projectId: "cmt322-d01d6",
+      storageBucket: "cmt322-d01d6.appspot.com",
+      messagingSenderId: "793974782556",
+      appId: "1:793974782556:web:0e3869bb34fa174a900499",
+      measurementId: "G-Y863S63Q9M"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+  <script src="index.js"></script>
+
+</html>

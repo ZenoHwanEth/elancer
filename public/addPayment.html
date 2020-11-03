@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add payment</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="resourse/css/addpayment.css">
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    </head>
+    <header>
+        <div class="header-button-right">
+            <img src="resourse/layout/elancerlogo.png" style="height: auto; width: 8%">
+            <button class="top-button" onclick="homeClick()">Home</button>
+            <button class="top-button" onclick="searchClick()">Search Service</button>
+        </div>     
+        <div class ="topnav">
+                <div class = "topnav-right">
+                    <p>Log In As  |</p>
+                    <button class="main_button_search" id="loginBtn" type="submit" onclick="customer()">Customer</button>
+                    <button class="main_button_search" id="RegisterBtn" type="submit" onclick="freelancer()">Freelancer</button>
+                    <button class="main_button_search" id="userLoggedIn" onclick="goProfile()" style="display:none;"></p>
+                </div>
+            </div>
+            <div id="Customer" class="loginRegisterBox" style="display:none">
+                    <!--customer login-->
+                    <div id="customerLogin" class="Login">
+                      Customer Login<br>
+                      <input id="exCusEmail" type="email" name="email" value="" placeholder="Email"><br>
+                      <input id="exCusPassword" type="password" name="password" value="" placeholder="Password"><br>
+                      <button class="main_button" type="submit" name="button" onclick="cusLogin()">Login</button>
+                    </div>
+                
+                    <a id="signup" href="#customerRegister" style="display:block" onclick="RegCust()">Register as a customer.</a>
+            </div>
+                
+                
+            <div id="Freelancer" class="loginRegisterBox" style="display:none">
+                    <!--freelancer login-->
+                <div id="freelancerLogin" class="Login">
+                    Freelancer Login<br>
+                    <input id="fEmail" type="email" name="email" value="" placeholder="Email"><br>
+                    <input id="fpassword" type="password" name="password" value="" placeholder="Password"><br>
+                    <button class="main_button" type="submit" name="button" onclick="freeLogin()">Login</button>
+                </div>
+                
+                <a id="signup2" href="#FreelancerRegister" style="display:block" onclick="RegFree()">Register as a freelancer.</a>
+            </div>          
+    </header>
+    <body>
+        <div class="module">
+            <h1 style="color: rgb(103, 129, 216);">Add Wallet Money</h1>
+            <div class="images">
+                <img src="resourse/layout/Visa logo.png" style="height:10%;width:10%; ;" >
+                <img src="resourse/layout/mastercardlogo.png" style="height:10%;width:10%; margin-right: 50%; ">
+            </div>
+            <div class='card-wrapper' style="margin-top:2%;"></div>
+        <form>
+            <div class="input-container">
+                <input id="card-number" name="number" class="large_input" placeholder="Card Number"  type="text"  inputmode="numeric">
+            </div>
+            <div class="input-container">
+                <input id="name" name="name" class="large_input" placeholder="Name on Card">
+            </div>
+            <div class="input-container"> 
+                <input id="expiration" name="expiry" class="small_input" placeholder="Expiration(MM/YY)" style="margin-right: 10%;" type="text" inputmode="numeric">
+                <input id="cvv"   name="cvc" class="small_input" placeholder="CVV" type="text"  inputmode="numeric">
+            </div>    
+            <div class="input-container"> 
+                <p  style="margin-right: 58%; color:#555">Total amount : </p><input id="amount" class="large_input" placeholder="Amount RM :" type="text" pattern="[0-9]*" inputmode="numeric">
+            </div>
+        </form>
+            <button class="confirm-button" onclick="confirmClick()">Confirm</button>
+        </div>
+    </body>
+
+
+    <!--script====================================================================>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+  <script src="node_modules/card/dist/jquery.card.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+  https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-database.js"></script>
+
+  <script>
+    var card = new Card({
+        form: 'form',
+        container: '.card-wrapper',
+
+        placeholders: {
+            number: '**** **** **** ****',
+            name: 'Arya Stark',
+            expiry: '**/****',
+            cvc: '***'
+        }
+    });
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAEtfmRoVDvnc_hvjsegtOXPzTiWSyfe2k",
+      authDomain: "cmt322-d01d6.firebaseapp.com",
+      databaseURL: "https://cmt322-d01d6.firebaseio.com",
+      projectId: "cmt322-d01d6",
+      storageBucket: "cmt322-d01d6.appspot.com",
+      messagingSenderId: "793974782556",
+      appId: "1:793974782556:web:0e3869bb34fa174a900499",
+      measurementId: "G-Y863S63Q9M"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+
+  <script src="index.js"></script>
+  <script src="addpayment.js"></script>
+</html>

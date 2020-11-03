@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<title>Registeration - customer</title>
+
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+  <link rel="stylesheet" type="text/css" href="register.css">
+</head>
+
+<body>
+
+  <!--customer register-->
+  <div class="container">
+    <h2>Add New Job Request</h2><br>
+    <p>Fill in the form to make a new request!</p>
+    <div id="customerRegister" class="Register">
+      <input id="jobTitle" type="email" placeholder="Job Title"><br>
+      <select id="jobType">
+        <option value="0">Select Categories</option>
+        <option value="1">Additions & Remodels</option>
+        <option value="2">Appliances</option>
+        <option value="3">Architects & Engineers</option>
+        <option value="4">Carpentry</option>
+        <option value="5">Carpet</option>
+        <option value="6">Cleaning & Maid Service</option>
+        <option value="7">Concrete, Brick & Stone</option>
+        <option value="8">Decks & Porches</option>
+        <option value="9">Driveways, Patios & Walks</option>
+        <option value="10">Drywall & Insulation</option>
+        <option value="11">Fences</option>
+        <option value="12">Garages, Doors, Openers</option>
+        <option value="13">Landscape</option>
+        <option value="14">Lawncare & Sprinklers</option>
+        <option value="15">Remodels</option>
+        <option value="16">Siding</option>
+        <option value="17">Swimming Pools & Spas</option>
+        <option value="18">Tile & Stone</option>
+        <option value="19">Walls & Ceilings</option>
+      </select><br>
+      <select id="freelancer">
+          <option value="0">Select Freelancer</option>
+          <option value="1">Auto Assign</option>
+      </select>
+      <select id="address">
+          <option value= "0">Select Service Address</option>
+      </select>
+      <input id="serviceDate" type="date" placeholder="Service Date"><br>
+      <input id="serviceTime" type="time" placeholder="Contact"><br>
+      <textarea rows="4" cols="50" id="description" type="textarea" name="description" value="" placeholder="Job Description"></textarea> <br>
+      <button class="main_button" type="submit" name="button" onclick="addNewRequest()">Submit</button>
+      <button class="cancel_button" type="submit" name="button" onclick="cancelReg()">Cancel</button>
+    </div>
+  </div>
+
+<!--script====================================================================>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+  https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-database.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAEtfmRoVDvnc_hvjsegtOXPzTiWSyfe2k",
+      authDomain: "cmt322-d01d6.firebaseapp.com",
+      databaseURL: "https://cmt322-d01d6.firebaseio.com",
+      projectId: "cmt322-d01d6",
+      storageBucket: "cmt322-d01d6.appspot.com",
+      messagingSenderId: "793974782556",
+      appId: "1:793974782556:web:0e3869bb34fa174a900499",
+      measurementId: "G-Y863S63Q9M"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+  <script src="index.js"></script>
+
+</html>

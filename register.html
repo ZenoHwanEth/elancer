@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<title>Registeration - customer</title>
+
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+  <link rel="stylesheet" type="text/css" href="register.css">
+</head>
+
+<body>
+
+  <!--customer register-->
+  <div class="container">
+    <h2>Register as Customer</h2><br>
+    <p>Fill in the form to register your account.</p>
+    <div id="customerRegister" class="Register">
+      <input id="cusEmail" type="email" name="email" value="" placeholder="Email"><br>
+      <input id="cusName" type="text" name="username" value="" placeholder="Username"><br>
+      <input id="cusPassword" type="password" name="password" value="" placeholder="Password"><br>
+      <input id="contact" type="text" name="contact" value="" placeholder="Contact"><br>
+      <textarea rows="4" cols="50" id="address" type="textarea" name="address" value="" placeholder="Address"></textarea> <br>
+      <button class="main_button" type="submit" name="button" onclick="newCustomer()">Register</button>
+      <button class="cancel_button" type="submit" name="button" onclick="cancelReg()">Cancel</button>
+    </div>
+  </div>
+
+<!--script====================================================================>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+  https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-database.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAEtfmRoVDvnc_hvjsegtOXPzTiWSyfe2k",
+      authDomain: "cmt322-d01d6.firebaseapp.com",
+      databaseURL: "https://cmt322-d01d6.firebaseio.com",
+      projectId: "cmt322-d01d6",
+      storageBucket: "cmt322-d01d6.appspot.com",
+      messagingSenderId: "793974782556",
+      appId: "1:793974782556:web:0e3869bb34fa174a900499",
+      measurementId: "G-Y863S63Q9M"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+  <script src="index.js"></script>
+
+</html>
